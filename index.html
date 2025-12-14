@@ -2022,22 +2022,23 @@ A víz tisztán csillog, apró halak cikáznak benne. Délen egy kidőlt fa híd
   [[várudvar]]
   [[város]]
 &lt;/div&gt;
-</tw-passagedata><tw-passagedata pid="62" name="város" tags="" position="300,1175" size="100,200">&lt;!-- HANG --egyszerre két mang keverése&gt;
+</tw-passagedata><tw-passagedata pid="62" name="város" tags="" position="300,1175" size="100,200">&lt;&lt;masteraudio stop&gt;&gt;
+/* Ez leállítja, ha esetleg beragadt volna valami */
 
-&lt;&lt;masteraudio stop&gt;&gt;
+/* HANGOK INDÍTÁSA */
+/* Fontos: Ha a StoryInit-ben más nevet adtál, itt is írd át! */
+&lt;&lt;audio &quot;harang_SC&quot; volume 0.3 loop play&gt;&gt;
+&lt;&lt;audio &quot;piac_SC&quot; volume 0.5 loop play&gt;&gt;
 
-&lt;audio autoplay loop onplay=&quot;this.volume=0.7&quot;&gt;
-    &lt;source src=&quot;https://github.com/Cyrro69/zrinyi1566/blob/main/hangok/kis%20harang_sok.mp3?raw=true&quot; type=&quot;audio/mpeg&quot;&gt;
-&lt;/audio&gt;
 
-&lt;audio autoplay loop onplay=&quot;this.volume=0.5&quot;&gt;
-    &lt;source src=&quot;https://github.com/Cyrro69/zrinyi1566/blob/main/hangok/piac1.mp3?raw=true&quot; type=&quot;audio/mpeg&quot;&gt;
-&lt;/audio&gt;
-
-&lt;!-- Teljes képernyős háttérkép – Város --&gt;
+&lt;!-- Teljes képernyős háttérkép – Város Főtér --&gt;
 &lt;div class=&quot;fullscreen-bg&quot;
-     style=&quot;background-image: url(&#39;https://github.com/Cyrro69/zrinyi1566/blob/main/kepek/varos.png?raw=true&amp;sz=w2000&#39;);&quot;&gt;
+     style=&quot;background-image: url(&#39;https://github.com/Cyrro69/zrinyi1566/blob/main/kepek/varos_foter.png?raw=true&quot; style=&quot;width: 100%; box-shadow: 0 0 20px black;&quot;&gt;
 &lt;/div&gt;
+
+/* régi kép a városba https://github.com/Cyrro69/zrinyi1566/blob/main/kepek/varos_foter.png?raw=true&amp;sz=w2000&#39;);&quot;&gt;  */
+/* &lt;img src=&quot;https://github.com/Cyrro69/zrinyi1566/blob/main/kepek/varos.jpg?raw=true&quot; style=&quot;width: 100%; box-shadow: 0 0 20px black;&quot;&gt; */
+
 
 &lt;!-- Narráció szöveg (fekete háttér nélkül) --&gt;
 &lt;div class=&quot;narration&quot;&gt;
@@ -2067,8 +2068,7 @@ A víz tisztán csillog, apró halak cikáznak benne. Délen egy kidőlt fa híd
   [[keleti kapu]] 
   [[piac]]
   [[arckepcsarnok]]
-  
-&lt;/div&gt;
+  &lt;/div&gt;
 
 &lt;!-- Klikkelhető zóna a torony környékén – Vártoronyba visz --&gt;
 &lt;span class=&quot;hotspot&quot;
@@ -2114,14 +2114,14 @@ A víz tisztán csillog, apró halak cikáznak benne. Délen egy kidőlt fa híd
 &lt;div class=&quot;bottom-bar&quot;&gt;
   [[várudvar]]
 &lt;/div&gt;
-</tw-passagedata><tw-passagedata pid="64" name="várudvar" tags="" position="300,1675" size="100,200">&lt;!-- HANG --egyszerre két mang keverése&gt;
-&lt;&lt;masteraudio stop&gt;&gt;
+</tw-passagedata><tw-passagedata pid="64" name="várudvar" tags="" position="300,1675" size="100,200">&lt;&lt;masteraudio stop&gt;&gt;
+&lt;img src=&quot;https://github.com/Cyrro69/zrinyi1566/blob/main/kepek/varudvar.jpg?raw=true&quot; style=&quot;width: 100%; box-shadow: 0 0 20px black;&quot;&gt;
 
-&lt;audio autoplay loop onplay=&quot;this.volume=0.3&quot;&gt;
+&lt;audio autoplay loop style=&quot;display: none;&quot; onplay=&quot;this.volume=0.3&quot;&gt;
     &lt;source src=&quot;https://github.com/Cyrro69/zrinyi1566/blob/main/hangok/kis%20harang_sok.mp3?raw=true&quot; type=&quot;audio/mpeg&quot;&gt;
 &lt;/audio&gt;
 
-&lt;audio autoplay loop onplay=&quot;this.volume=0.5&quot;&gt;
+&lt;audio autoplay loop style=&quot;display: none;&quot; onplay=&quot;this.volume=0.5&quot;&gt;
     &lt;source src=&quot;https://github.com/Cyrro69/zrinyi1566/blob/main/hangok/piac1.mp3?raw=true&quot; type=&quot;audio/mpeg&quot;&gt;
 &lt;/audio&gt;
 
@@ -2704,7 +2704,10 @@ function toggleFullscreen() {
 &lt;&lt;set $orState = 0&gt;&gt;
 &lt;&lt;set $orTrust = 0&gt;&gt;
 &lt;&lt;set $hasRustyKnife = false&gt;&gt; /* Javasolt új változó */
-</tw-passagedata><tw-passagedata pid="78" name="gabonafoldek" tags="" position="125,525" size="100,100">Innét csak visszafordulni tudsz !
+
+/* Ha még nincsenek benne, másold be őket: */
+&lt;&lt;cacheaudio &quot;harang_SC&quot; &quot;https://github.com/Cyrro69/zrinyi1566/blob/main/hangok/kis%20harang_sok.mp3?raw=true&quot;&gt;&gt;
+&lt;&lt;cacheaudio &quot;piac_SC&quot; &quot;https://github.com/Cyrro69/zrinyi1566/blob/main/hangok/piac1.mp3?raw=true&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="78" name="gabonafoldek" tags="" position="125,525" size="100,100">Innét csak visszafordulni tudsz !
 &lt;!-- Teljes képernyős háttérkép – Gabona földek --&gt;
 &lt;div class=&quot;fullscreen-bg&quot;
      style=&quot;background-image: url(&#39;https://github.com/Cyrro69/zrinyi1566/blob/main/kepek/gabonafold.jpg?raw=true&amp;sz=w2000&#39;);&quot;&gt;
